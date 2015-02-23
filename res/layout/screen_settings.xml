@@ -17,7 +17,7 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Settings"
+            android:text="@string/settings_header"
             android:textAlignment="center"
             android:id="@+id/settings_lbl_header"
             android:textSize="36dp"
@@ -33,14 +33,14 @@
     <Switch
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sound"
+            android:text="@string/settings_switch_sound"
             android:id="@+id/settings_switch_sound"
             android:layout_below="@+id/settings_space"
             android:layout_centerHorizontal="true"/>
 
     <Switch android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Music"
+            android:text="@string/settings_switch_music"
             android:id="@+id/settings_switch_music"
             android:layout_below="@+id/settings_switch_sound"
             android:layout_centerHorizontal="true"/>
@@ -48,14 +48,14 @@
     <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Switch Account"
+            android:text="@string/settings_btn_account"
             android:id="@+id/settings_btn_switch_account"
             android:layout_below="@+id/settings_switch_music"
             android:layout_centerHorizontal="true"/>
     <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Share"
+            android:text="@string/settings_btn_share"
             android:id="@+id/settings_btn_share"
             android:layout_below="@+id/settings_btn_switch_account"
             android:layout_centerHorizontal="true"/>
@@ -63,7 +63,7 @@
     <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Achievements"
+            android:text="@string/settings_btn_achievements"
             android:id="@+id/settings_btn_achievements"
             android:layout_below="@+id/settings_btn_share"
             android:layout_centerHorizontal="true"/>
