@@ -97,6 +97,7 @@ public class ScreenSettings extends Activity
 
     public void onBackButtonPressed()
     {
-        //TODO: switch to the main activity
+        this.finish();
+        onBackPressed();
     }
 }
