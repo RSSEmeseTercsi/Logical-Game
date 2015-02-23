@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+        >
+
+    <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="back"
+            android:id="@+id/settings_btn_back"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:textAlignment="center"
+            android:id="@+id/settings_lbl_header"
+            android:textSize="36dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"/>
+
+    <Space
+            android:id="@+id/settings_space"
+            android:layout_width="20px"
+            android:layout_height="80px"
+            android:layout_below="@+id/settings_lbl_header" />
+
+    <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sound"
+            android:id="@+id/settings_switch_sound"
+            android:layout_below="@+id/settings_space"
+            android:layout_centerHorizontal="true"/>
+
+    <Switch android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Music"
+            android:id="@+id/settings_switch_music"
+            android:layout_below="@+id/settings_switch_sound"
+            android:layout_centerHorizontal="true"/>
+
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Switch Account"
+            android:id="@+id/settings_btn_switch_account"
+            android:layout_below="@+id/settings_switch_music"
+            android:layout_centerHorizontal="true"/>
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Share"
+            android:id="@+id/settings_btn_share"
+            android:layout_below="@+id/settings_btn_switch_account"
+            android:layout_centerHorizontal="true"/>
+
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Achievements"
+            android:id="@+id/settings_btn_achievements"
+            android:layout_below="@+id/settings_btn_share"
+            android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
+
