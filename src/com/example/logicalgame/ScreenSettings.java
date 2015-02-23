@@ -33,9 +33,9 @@ public class ScreenSettings extends Activity
 
         this.setSwitchDefaultValues();
 
-        if (this.mToggleSound != null)
+        if (this.mToggleMusic != null)
         {
-            this.mToggleSound.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+            this.mToggleMusic.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
             {
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
                 {
