@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!--Start screen-->
     <string name="app_name">logicalgame</string>
+    <string name="anonymus">Anonymus</string>
+    <string name="continue_btn">Continue</string>
+    <string name="new_game">New</string>
+    <string name="settings">Settings</string>
 </resources>

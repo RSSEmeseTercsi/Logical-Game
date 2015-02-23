@@ -9,62 +9,62 @@
 
     <ImageView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:id="@+id/imageView"
+            android:layout_height="@dimen/start_screen_title_logo_height"
+            android:id="@+id/title_logo"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:background="@android:color/darker_gray"/>
     <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:id="@+id/imageView2"
+            android:layout_width="@dimen/start_screen_company_logo_height_width"
+            android:layout_height="@dimen/start_screen_company_logo_height_width"
+            android:id="@+id/company_logo"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
             android:background="@android:color/holo_orange_light"/>
 
 
-    <ImageView android:layout_width="50dp"
-               android:layout_height="50dp"
-               android:id="@+id/imageView3"
+    <ImageView android:layout_width="@dimen/start_screen_player_imgheight_width"
+               android:layout_height="@dimen/start_screen_player_imgheight_width"
+               android:id="@+id/player_image"
                android:background="@android:color/white"
                android:layout_alignParentBottom="true"
                android:layout_centerHorizontal="true"/>
 
 
     <TextView android:layout_width="wrap_content"
-              android:layout_height="50dp"
-              android:text="Player name"
+              android:layout_height="@dimen/tart_screen_player_name_height"
+              android:text="@string/anonymus"
               android:id="@+id/player_name"
               android:gravity="center"
-              android:layout_alignRight="@+id/imageView3"
+              android:layout_alignRight="@+id/player_image"
               android:layout_alignParentBottom="true"
               android:layout_alignParentRight="true"
-              android:layout_toEndOf="@+id/imageView3"/>
+              android:layout_toEndOf="@+id/player_image"/>
     <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
-            android:text="Continue"
-            android:id="@+id/button"
+            android:layout_marginLeft="@dimen/start_screen_button_margin"
+            android:layout_marginRight="@dimen/start_screen_button_margin"
+            android:text="@string/continue_btn"
+            android:id="@+id/continue_btn"
 
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"/>
     <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New"
-            android:layout_marginLeft="50dp"
-            android:id="@+id/button2"
-            android:layout_above="@+id/button"
-            android:layout_alignRight="@+id/button"/>
+            android:text="@string/new_game"
+            android:layout_marginLeft="@dimen/start_screen_button_margin"
+            android:id="@+id/new_game_btn"
+            android:layout_above="@+id/continue_btn"
+            android:layout_alignRight="@+id/continue_btn"/>
     <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Settings"
-            android:layout_marginLeft="50dp"
-            android:id="@+id/button3"
-            android:layout_below="@+id/button"
-            android:layout_alignRight="@+id/button"/>
+            android:text="@string/settings"
+            android:layout_marginLeft="@dimen/start_screen_button_margin"
+            android:id="@+id/settings_button"
+            android:layout_below="@+id/continue_btn"
+            android:layout_alignRight="@+id/continue_btn"/>
 
 </RelativeLayout>

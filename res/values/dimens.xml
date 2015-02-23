@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Strart screen-->
+
+    <dimen name="start_screen_title_logo_height">
+        100dp
+    </dimen>
+    <dimen name="start_screen_company_logo_height_width">
+        50dp
+    </dimen>
+    <dimen name="start_screen_player_imgheight_width">
+        50dp
+    </dimen>
+    <dimen name="tart_screen_player_name_height">
+        50dp
+    </dimen>
+    <dimen name="start_screen_button_margin">
+        50dp
+    </dimen>
+
+</resources>
