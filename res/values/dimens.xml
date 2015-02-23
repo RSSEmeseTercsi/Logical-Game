@@ -18,5 +18,8 @@
     <dimen name="start_screen_button_margin">
         50dp
     </dimen>
+    <dimen name="settings_space_after_header">
+        70dp
+    </dimen>
 
 </resources>

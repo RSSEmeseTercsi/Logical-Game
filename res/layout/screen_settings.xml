@@ -26,8 +26,8 @@
 
     <Space
             android:id="@+id/settings_space"
-            android:layout_width="20px"
-            android:layout_height="80px"
+            android:layout_width="@dimen/settings_space_after_header"
+            android:layout_height="@dimen/settings_space_after_header"
             android:layout_below="@+id/settings_lbl_header" />
 
     <Switch
