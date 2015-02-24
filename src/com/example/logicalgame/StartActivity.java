@@ -3,8 +3,10 @@ package com.example.logicalgame;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import com.example.logicalgame.data.DirectedGraph;
 
 public class StartActivity extends Activity implements View.OnClickListener {
     /**
@@ -20,6 +22,20 @@ public class StartActivity extends Activity implements View.OnClickListener {
 
         newButton.setOnClickListener(this);
         settings.setOnClickListener(this);
+
+
+        //DUMMMY
+        DirectedGraph<String> graph = new DirectedGraph<String>();
+
+        graph.add("#1","#2");
+        graph.add("#1","#3");
+        graph.add("#2","#4");
+        graph.add("#3","#4");
+        graph.add("#4","#5");
+        graph.add("#6","#5");
+
+        Log.d("GRAPH", graph.toString());
+
     }
 
     @Override
