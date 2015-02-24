@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+                android:layout_weight="2">
+        <com.example.logicalgame.ScreenGameSurface
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/game_surface" />
+        <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="75dp" android:orientation="horizontal" android:id="@+id/game_row1" android:background="@drawable/game_stripe_test" android:gravity="center"></LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="75dp" android:orientation="horizontal" android:id="@+id/game_row2" android:background="@drawable/game_stripe_test2" android:gravity="center"></LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="75dp" android:orientation="horizontal" android:id="@+id/game_row3" android:background="@drawable/game_stripe_test" android:gravity="center"></LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="75dp" android:orientation="horizontal" android:id="@+id/game_row4" android:background="@drawable/game_stripe_test2" android:gravity="center"></LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="75dp" android:orientation="horizontal" android:id="@+id/game_row5" android:background="@drawable/game_stripe_test" android:gravity="center"></LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="75dp" android:orientation="horizontal" android:id="@+id/game_row6" android:background="@drawable/game_stripe_test2" android:gravity="center"></LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="75dp" android:orientation="horizontal" android:id="@+id/game_row7" android:background="@drawable/game_stripe_test" android:gravity="center"></LinearLayout>
+        </TableLayout>
+    </FrameLayout>
+    <ListView
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:id="@+id/game_node_selection_view"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0dp"
+            android:layout_gravity="right"/>
+
+</LinearLayout>
