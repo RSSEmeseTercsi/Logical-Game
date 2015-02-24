@@ -12,4 +12,6 @@
     <string name="settings_btn_share">Share</string>
     <string name="settings_btn_achievements">Achievements</string>
     <string name="back">Back</string>
+    <string name="share_body">Sharing from my awesome app, because why the hell not.</string>
+    <string name="share_popup_title">Share via</string>
 </resources>

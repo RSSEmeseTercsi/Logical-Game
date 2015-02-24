@@ -75,6 +75,11 @@ public class Progress
         _progressMap.put(type, value);
     }
 
+    public float getProgress(ESaveType type)
+    {
+        return _progressMap.get(type);
+    }
+
     public void removeProgress(ESaveType type)
     {
         _progressMap.remove(type);
