@@ -29,8 +29,17 @@ public class Node extends View
         node_type_division
     }
 
-    public Node(Context context)
+    ENodeType  mType;
+    ENodeOwner mOwner;
+    ENodeShape mShape;
+
+    public Node(Context context, ENodeType type, ENodeOwner owner, ENodeShape shape)
     {
         super(context);
+        this.mType= type;
+        this.mShape = shape;
+        this.mOwner = owner;
+
+     //   buildNode();
     }
 }

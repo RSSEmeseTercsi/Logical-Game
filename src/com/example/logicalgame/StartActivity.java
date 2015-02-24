@@ -17,9 +17,11 @@ public class StartActivity extends Activity implements View.OnClickListener {
 
         Button settings = (Button) findViewById(R.id.settings_button);
         Button newButton = (Button) findViewById(R.id.new_game_btn);
+        Button continueButton = (Button) findViewById(R.id.continue_btn);
 
         newButton.setOnClickListener(this);
         settings.setOnClickListener(this);
+        continueButton.setOnClickListener(this);
     }
 
     @Override
@@ -31,6 +33,9 @@ public class StartActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.new_game_btn:
                 startActivity(new Intent(this,LevelChooserActivity.class));
+                break;
+            case R.id.continue_btn:
+                startActivity(new Intent(this, ScreenGame.class));
                 break;
             default:
                 break;

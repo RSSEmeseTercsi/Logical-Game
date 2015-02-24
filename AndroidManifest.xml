@@ -14,5 +14,6 @@
         </activity>
         <activity android:name=".ScreenSettings"/>
 	    <activity android:name=".LevelChooserActivity"/>
+        <activity android:name=".ScreenGame"/>
     </application>
 </manifest>
