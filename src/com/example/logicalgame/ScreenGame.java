@@ -5,10 +5,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
-<<<<<<< Updated upstream
-=======
 import android.view.ViewTreeObserver;
->>>>>>> Stashed changes
 import android.widget.*;
 import com.example.logicalgame.node.Node;
 import com.example.logicalgame.node.NodeSet;
@@ -30,10 +27,6 @@ public class ScreenGame extends Activity
 
         bindAdapterToSelectionView();
 
-<<<<<<< Updated upstream
-        for (int c = 0; c < 4; c++)
-            addRandomShit();
-
         Button backButton = (Button) findViewById(R.id.back_button);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,9 +34,8 @@ public class ScreenGame extends Activity
                 backButtonClicked();
             }
         });
-=======
+
         bindNodeSet();
->>>>>>> Stashed changes
     }
 
     /* We should bind the available noes in this function
@@ -127,17 +119,16 @@ public class ScreenGame extends Activity
         return retVal;
     }
 
-<<<<<<< Updated upstream
-    public void backButtonClicked(){
-        this.finish();
-        onBackPressed();
-=======
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         if (hasFocus) {
             ((ScreenGameSurface)findViewById(R.id.game_surface)).createRelations(nodeSet);
         }
->>>>>>> Stashed changes
+    }
+
+    public void backButtonClicked(){
+        this.finish();
+        onBackPressed();
     }
 }

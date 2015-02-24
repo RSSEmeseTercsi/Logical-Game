@@ -44,7 +44,7 @@ public class DirectedGraph<V> {
     }
 
     /**
-     * Returns all neighbor relations
+     * Returns all neighbor nodes of a node
      */
     public List<V> getNeighborsForNode(V node)
     {
