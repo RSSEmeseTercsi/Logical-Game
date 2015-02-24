@@ -2,9 +2,11 @@ package com.example.logicalgame;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.widget.*;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by Greg on 2/24/15.
@@ -17,6 +19,9 @@ public class ScreenGame extends Activity
         setContentView(R.layout.screen_game);
 
         bindAdapterToSelectionView();
+
+        for (int c = 0; c < 4; c++)
+            addRandomShit();
     }
 
     /* We should bind the available noes in this function
@@ -30,9 +35,20 @@ public class ScreenGame extends Activity
         for (int i = 0; i < 5; i++) {
             list.add("Node " + i);
         }
-        arrayAdapter = new ArrayAdapter(this,R.layout.screen_game_picker_item, R.id.game_available_node, list);
+        arrayAdapter = new ArrayAdapter(this, R.layout.screen_game_picker_item, R.id.game_available_node, list);
 
         levelListView.setAdapter(arrayAdapter);
+    }
+
+    public void addRandomShit()
+    {
+        int randomRow = new Random().nextInt(5);
+        Button btn = new Button(this);
+        btn.setWidth(75);
+        btn.setHeight(75);
+        btn.setGravity(Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL);
+        btn.setText("R"+ randomRow);
+        getGameRow(randomRow).addView(btn);
     }
 
     //starts with 0
@@ -69,6 +85,7 @@ public class ScreenGame extends Activity
             {
                 retVal = (LinearLayout)findViewById(R.id.game_row7);
             } break;
+            default: retVal = (LinearLayout)findViewById(R.id.game_row5); break;
         }
         return retVal;
     }
