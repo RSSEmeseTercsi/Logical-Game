@@ -22,4 +22,11 @@
         70dp
     </dimen>
 
+    <!--Level Chooser screen-->
+
+    <dimen name="back_button_height">50dp</dimen>
+    <dimen name="back_button_margin_left">5dp</dimen>
+    <dimen name="back_button_margin_top">5dp</dimen>
+
+
 </resources>

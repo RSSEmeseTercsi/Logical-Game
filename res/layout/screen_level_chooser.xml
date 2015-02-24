@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <Button
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/back_button_height"
+            android:layout_marginLeft="@dimen/back_button_margin_left"
+            android:layout_marginTop="@dimen/back_button_margin_top"
+            android:text="@string/back"
+            />
+    <TextView
+            android:id="@+id/unblocked_and_sum_levelnums"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/back_button"
+            />
+    <ListView
+            android:id="@+id/level_list_view"
+            android:layout_below="@+id/unblocked_and_sum_levelnums"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+    </ListView>
+
+</RelativeLayout>

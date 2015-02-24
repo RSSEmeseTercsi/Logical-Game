@@ -16,7 +16,9 @@ public class StartActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.screen_start);
 
         Button settings = (Button) findViewById(R.id.settings_button);
+        Button newButton = (Button) findViewById(R.id.new_game_btn);
 
+        newButton.setOnClickListener(this);
         settings.setOnClickListener(this);
     }
 
@@ -26,6 +28,9 @@ public class StartActivity extends Activity implements View.OnClickListener {
         switch (v.getId()){
             case R.id.settings_button:
                startActivity(new Intent(this,ScreenSettings.class));
+                break;
+            case R.id.new_game_btn:
+                startActivity(new Intent(this,LevelChooserActivity.class));
                 break;
             default:
                 break;

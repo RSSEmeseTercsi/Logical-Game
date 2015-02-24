@@ -3,3 +3,7 @@ out/
 gen/
 /
 Logical-Game.iml
+build.xml
+ant.properties
+local.properties
+project.properties

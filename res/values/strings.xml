@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <!--Start screen-->
-    <string name="app_name">logicalgame</string>
+    <string name="app_name">Logical Game</string>
     <string name="anonymus">Anonymus</string>
     <string name="continue_btn">Continue</string>
     <string name="new_game">New</string>
@@ -13,5 +11,5 @@
     <string name="settings_btn_account">Switch account</string>
     <string name="settings_btn_share">Share</string>
     <string name="settings_btn_achievements">Achievements</string>
-
+    <string name="back">Back</string>
 </resources>
