@@ -3,6 +3,7 @@ package com.example.logicalgame;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.*;
 
 import java.util.ArrayList;
@@ -22,6 +23,14 @@ public class ScreenGame extends Activity
 
         for (int c = 0; c < 4; c++)
             addRandomShit();
+
+        Button backButton = (Button) findViewById(R.id.back_button);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                backButtonClicked();
+            }
+        });
     }
 
     /* We should bind the available noes in this function
@@ -88,5 +97,10 @@ public class ScreenGame extends Activity
             default: retVal = (LinearLayout)findViewById(R.id.game_row5); break;
         }
         return retVal;
+    }
+
+    public void backButtonClicked(){
+        this.finish();
+        onBackPressed();
     }
 }

@@ -34,6 +34,6 @@ public class ScreenGameSurface extends View
     {
         super.onDraw(canvas);
 
-        canvas.drawText("SCORE: 0001", 0, 50, this.mPaint);
+        //canvas.drawText("SCORE: 0001", 0, 50, this.mPaint);
     }
 }
