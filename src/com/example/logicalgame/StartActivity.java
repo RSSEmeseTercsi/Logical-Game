@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import com.example.logicalgame.data.DirectedGraph;
+import com.example.logicalgame.node.NodeSet;
 
 public class StartActivity extends Activity implements View.OnClickListener {
     /**
@@ -29,7 +30,7 @@ public class StartActivity extends Activity implements View.OnClickListener {
     }
 
     private void createDummyGraph() {
-        //DUMMMY
+      /*  //DUMMMY
         DirectedGraph<String> graph = new DirectedGraph<String>();
 
         graph.add("#1","#2");
@@ -40,6 +41,7 @@ public class StartActivity extends Activity implements View.OnClickListener {
         graph.add("#6","#5");
 
         Log.d("GRAPH", graph.toString());
+        */
     }
 
     @Override

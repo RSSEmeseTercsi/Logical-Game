@@ -112,7 +112,7 @@ public class ScreenSettings extends Activity
             sharedPreferencesEditor.remove(sound ? SETTINGS_SOUND_PREF : SETTINGS_MUSIC_PREF);
         }
         sharedPreferencesEditor.putBoolean(sound ? SETTINGS_SOUND_PREF : SETTINGS_MUSIC_PREF, checked);
-        sharedPreferencesEditor.commit();
+        sharedPreferencesEditor.apply();
     }
 
     public void onBackButtonPressed()

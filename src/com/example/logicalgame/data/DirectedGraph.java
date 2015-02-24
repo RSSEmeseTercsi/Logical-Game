@@ -44,6 +44,22 @@ public class DirectedGraph<V> {
     }
 
     /**
+     * Returns all neighbor relations
+     */
+    public List<V> getNeighborsForNode(V node)
+    {
+        final List<GraphItem<V>> graphItems = neighbors.get(node);
+        List<V> nodes = new ArrayList<V>();
+
+        for (GraphItem<V> item : graphItems)
+        {
+            nodes.add(item.getContainedObject());
+        }
+
+        return nodes;
+    }
+
+    /**
      * Add a item to the graph. Nothing happens if item is already in graph.
      */
     public void add(V graphItem) {
