@@ -3,14 +3,6 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-    <Button
-            android:id="@+id/back_button"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/back_button_height"
-            android:layout_marginLeft="@dimen/back_button_margin_left"
-            android:layout_marginTop="@dimen/back_button_margin_top"
-            android:text="@string/back"
-            />
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -26,21 +18,30 @@
             <TableLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-                <LinearLayout android:layout_width="match_parent" android:layout_height="75dp" android:orientation="horizontal" android:id="@+id/game_row1" android:background="@drawable/game_stripe_test" android:gravity="center"></LinearLayout>
-                <LinearLayout android:layout_width="match_parent" android:layout_height="75dp" android:orientation="horizontal" android:id="@+id/game_row2" android:background="@drawable/game_stripe_test2" android:gravity="center"></LinearLayout>
-                <LinearLayout android:layout_width="match_parent" android:layout_height="75dp" android:orientation="horizontal" android:id="@+id/game_row3" android:background="@drawable/game_stripe_test" android:gravity="center"></LinearLayout>
-                <LinearLayout android:layout_width="match_parent" android:layout_height="75dp" android:orientation="horizontal" android:id="@+id/game_row4" android:background="@drawable/game_stripe_test2" android:gravity="center"></LinearLayout>
-                <LinearLayout android:layout_width="match_parent" android:layout_height="75dp" android:orientation="horizontal" android:id="@+id/game_row5" android:background="@drawable/game_stripe_test" android:gravity="center"></LinearLayout>
-                <LinearLayout android:layout_width="match_parent" android:layout_height="75dp" android:orientation="horizontal" android:id="@+id/game_row6" android:background="@drawable/game_stripe_test2" android:gravity="center"></LinearLayout>
-                <LinearLayout android:layout_width="match_parent" android:layout_height="75dp" android:orientation="horizontal" android:id="@+id/game_row7" android:background="@drawable/game_stripe_test" android:gravity="center"></LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="75dp" android:orientation="horizontal" android:id="@+id/game_row1" android:gravity="center"></LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="75dp" android:orientation="horizontal" android:id="@+id/game_row2" android:gravity="center"></LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="75dp" android:orientation="horizontal" android:id="@+id/game_row3" android:gravity="center"></LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="75dp" android:orientation="horizontal" android:id="@+id/game_row4" android:gravity="center"></LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="75dp" android:orientation="horizontal" android:id="@+id/game_row5" android:gravity="center"></LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="75dp" android:orientation="horizontal" android:id="@+id/game_row6" android:gravity="center"></LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="75dp" android:orientation="horizontal" android:id="@+id/game_row7" android:gravity="center"></LinearLayout>
             </TableLayout>
+            <ListView
+                    android:layout_width="75dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/game_node_selection_view"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="0dp"
+                    android:background="#55000000"
+                    android:layout_gravity="right"/>
         </FrameLayout>
-        <ListView
-                android:layout_width="75dp"
-                android:layout_height="match_parent"
-                android:id="@+id/game_node_selection_view"
-                android:divider="@android:color/transparent"
-                android:dividerHeight="0dp"
-                android:layout_gravity="right"/>
     </LinearLayout>
+    <Button
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/back_button_height"
+            android:layout_marginLeft="@dimen/back_button_margin_left"
+            android:layout_marginTop="@dimen/back_button_margin_top"
+            android:text="@string/back"
+            />
 </RelativeLayout>

@@ -9,8 +9,11 @@ import android.view.ViewTreeObserver;
 import android.widget.*;
 import com.example.logicalgame.node.Node;
 import com.example.logicalgame.node.NodeSet;
+import com.example.logicalgame.node.NodeView;
+import com.example.logicalgame.node.NodeViewAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -20,12 +23,17 @@ public class ScreenGame extends Activity
 {
     private NodeSet nodeSet;
 
+    private List<NodeView> nodeViews;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.screen_game);
 
-        bindAdapterToSelectionView();
+        this.nodeViews = new ArrayList<NodeView>();
+
+        this.nodeSet = new NodeSet();
+        this.nodeSet.loadLevel(this, "level_1.json"); //load the level here
 
         Button backButton = (Button) findViewById(R.id.back_button);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -35,43 +43,47 @@ public class ScreenGame extends Activity
             }
         });
 
+        bindNodeSelector();
         bindNodeSet();
     }
 
     /* We should bind the available noes in this function
      * Note: It won't necessarily have a textview attached to it. */
-    private void bindAdapterToSelectionView()
+    private void bindNodeSelector()
     {
+        //todo select the dynamic nodes, and add them to this list
+
         ListView levelListView = (ListView) findViewById(R.id.game_node_selection_view);
         ArrayAdapter arrayAdapter;
 
-        ArrayList<String> list = new ArrayList<String>();
-        for (int i = 0; i < 5; i++) {
-            list.add("Node " + i);
-        }
-        arrayAdapter = new ArrayAdapter(this, R.layout.screen_game_picker_item, R.id.game_available_node, list);
+        //dynamics
+        ArrayList<NodeView> dynamicNodes = new ArrayList<NodeView>();
+        for (Node node : this.nodeSet.getNodes())
+        {
+            if (node.getOwner() == Node.ENodeOwner.node_owner_dynamic)
+            {
+                NodeView nodeView = new NodeView(this, null);
+                nodeView.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+                nodeView.bindNode(node);
 
-        levelListView.setAdapter(arrayAdapter);
+                dynamicNodes.add(nodeView);
+            }
+        }
+
+        levelListView.setAdapter(new NodeViewAdapter(this.getBaseContext(), dynamicNodes));
     }
 
     public void bindNodeSet()
     {
-        this.nodeSet = new NodeSet();
-        this.nodeSet.loadLevel();
-
         int c = 0;
         for (Node node : nodeSet.getNodes())
         {
-            Button btn = new Button(this);
-            btn.setWidth(75);
-            btn.setHeight(75);
-            btn.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
-            btn.setTextSize(9);
-            btn.setText(btn.hashCode() + "");
-            node.attachView(btn);
-            node.setID(c);
+            NodeView nodeView = new NodeView(this, null);
+            nodeView.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+            nodeView.bindNode(node);
+            node.attachView(nodeView);
 
-            getGameRow(node.getRow()).addView(btn);
+            getGameRow(node.getRow()).addView(nodeView);
             c++;
         }
     }

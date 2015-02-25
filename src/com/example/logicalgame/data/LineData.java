@@ -26,8 +26,5 @@ public class LineData
         x2 = child[0];
         y1 = parent[1];
         y2 = child[1];
-
-        Log.d("LineData", "x1: " + x1 + "  y1: " + y1);
-        Log.d("LineData", "x2: " + x2 + "  y2: " + y2);
     }
 }

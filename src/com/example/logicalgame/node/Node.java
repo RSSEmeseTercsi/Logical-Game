@@ -19,7 +19,8 @@ public class Node
     public enum ENodeOwner
     {
         node_owner_static,
-        node_owner_user,
+        node_owner_dynamic,
+        node_owner_empty,
         node_owner_none
     }
 
@@ -49,6 +50,17 @@ public class Node
         this.mSceneRow = 0;
     }
 
+    public Node(int id, int layer, ENodeShape shape, ENodeOwner owner, ENodeType type, String value)
+    {
+        this._id = id;
+        this.mSceneRow = layer;
+        this.mShape = shape;
+        this.mOwner = owner;
+        this.mType = type;
+
+        //TODO: handle values
+    }
+
     public Node(int row)
     {
         this.mType = ENodeType.node_type_none;
@@ -57,6 +69,27 @@ public class Node
         this.mSceneRow = row;
     }
 
+    public void setType(ENodeType type)
+    {
+        this.mType = type;
+    }
+
+    public void setOwner(ENodeOwner owner)
+    {
+        this.mOwner = owner;
+    }
+
+    public ENodeOwner getOwner()
+    {
+        return this.mOwner;
+    }
+
+    public void setShape(ENodeShape shape)
+    {
+        this.mShape = shape;
+    }
+
+    public void setRow(int row){ this.mSceneRow = row; }
     public int getRow()
     {
         return this.mSceneRow;
@@ -66,7 +99,6 @@ public class Node
     {
         this._attachedView = view;
     }
-
     public View getAttachedView()
     {
         return this._attachedView;
@@ -76,7 +108,6 @@ public class Node
     {
         this._id = id;
     }
-
     public int getID()
     {
         return this._id;
@@ -86,7 +117,6 @@ public class Node
     {
         this._position = position;
     }
-
     public Point getPosition()
     {
         return _position;
