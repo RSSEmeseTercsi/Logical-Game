@@ -1,6 +1,4 @@
-package com.example.logicalgame.data;
-
-import android.util.Log;
+package com.redsteedstudios.logicalgame.data;
 
 /**
  * Created by Greg on 2/24/15.

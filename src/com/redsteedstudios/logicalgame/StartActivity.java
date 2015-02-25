@@ -44,9 +44,11 @@ public class StartActivity extends Activity implements View.OnClickListener,  Go
 
 
         Button settings = (Button) findViewById(R.id.settings_button);
+        Button continuebtn = (Button) findViewById(R.id.continue_btn);
         imgProfilePic = (ImageView) findViewById(R.id.player_image);
         playerName = (TextView) findViewById(R.id.player_name);
         settings.setOnClickListener(this);
+        continuebtn.setOnClickListener(this);
 
         LinearLayout player_info_container = (LinearLayout) findViewById(R.id.player_info_container);
 
@@ -66,6 +68,9 @@ public class StartActivity extends Activity implements View.OnClickListener,  Go
         switch (v.getId()){
             case R.id.settings_button:
                startActivity(new Intent(this,ScreenSettings.class));
+                break;
+            case R.id.continue_btn:
+                startActivity(new Intent(this,ScreenGame.class));
                 break;
             case R.id.player_info_container:
 

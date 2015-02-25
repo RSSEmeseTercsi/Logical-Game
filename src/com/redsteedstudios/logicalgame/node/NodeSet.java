@@ -1,8 +1,8 @@
-package com.example.logicalgame.node;
+package com.redsteedstudios.logicalgame.node;
 
 import android.content.Context;
 import android.util.Log;
-import com.example.logicalgame.data.DirectedGraph;
+import com.redsteedstudios.logicalgame.data.DirectedGraph;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

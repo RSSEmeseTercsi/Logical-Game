@@ -1,8 +1,7 @@
-package com.example.logicalgame.util;
+package com.redsteedstudios.logicalgame.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
+import com.redsteedstudios.logicalgame.R;
 
 /**
  * Created by Greg on 2/23/15.
@@ -27,9 +28,9 @@ public class ScreenSettings extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.screen_settings);
 
-        this.mToggleSound = (Switch)findViewById(R.id.settings_switch_sound);
-        this.mToggleMusic = (Switch)findViewById(R.id.settings_switch_music);
-        this.mBackButton  = (Button)findViewById(R.id.settings_btn_back);
+        this.mToggleSound = (Switch)findViewById(R.id.switch_sound_settings);
+        this.mToggleMusic = (Switch)findViewById(R.id.switch_music_settings);
+        this.mBackButton  = (Button)findViewById(R.id.btn_settings_back);
 
         this.setSwitchDefaultValues();
 

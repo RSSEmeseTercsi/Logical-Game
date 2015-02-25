@@ -1,6 +1,5 @@
-package com.example.logicalgame.node;
+package com.redsteedstudios.logicalgame.node;
 
-import android.content.Context;
 import android.graphics.Point;
 import android.view.View;
 

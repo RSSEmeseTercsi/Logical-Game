@@ -1,4 +1,4 @@
-package com.example.logicalgame.data;
+package com.redsteedstudios.logicalgame.data;
 
 import java.util.ArrayList;
 import java.util.HashMap;

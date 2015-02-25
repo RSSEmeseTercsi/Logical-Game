@@ -1,20 +1,17 @@
-package com.example.logicalgame;
+package com.redsteedstudios.logicalgame;
 
 import android.app.Activity;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.*;
-import com.example.logicalgame.node.Node;
-import com.example.logicalgame.node.NodeSet;
-import com.example.logicalgame.node.NodeView;
-import com.example.logicalgame.node.NodeViewAdapter;
+import com.redsteedstudios.logicalgame.node.Node;
+import com.redsteedstudios.logicalgame.node.NodeSet;
+import com.redsteedstudios.logicalgame.node.NodeView;
+import com.redsteedstudios.logicalgame.node.NodeViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 /**
  * Created by Greg on 2/24/15.

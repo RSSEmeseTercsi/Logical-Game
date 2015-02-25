@@ -1,20 +1,15 @@
-package com.example.logicalgame;
+package com.redsteedstudios.logicalgame;
 
 import android.content.Context;
 import android.graphics.*;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.GridView;
-import com.example.logicalgame.data.DirectedGraph;
-import com.example.logicalgame.data.LineData;
-import com.example.logicalgame.node.Node;
-import com.example.logicalgame.node.NodeSet;
+import com.redsteedstudios.logicalgame.data.LineData;
+import com.redsteedstudios.logicalgame.node.Node;
+import com.redsteedstudios.logicalgame.node.NodeSet;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Greg on 2/24/15.

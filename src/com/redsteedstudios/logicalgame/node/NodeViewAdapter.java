@@ -1,11 +1,11 @@
-package com.example.logicalgame.node;
+package com.redsteedstudios.logicalgame.node;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import com.example.logicalgame.R;
+import com.redsteedstudios.logicalgame.R;
 
 import java.util.ArrayList;
 

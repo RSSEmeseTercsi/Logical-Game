@@ -1,4 +1,4 @@
-package com.example.logicalgame;
+package com.redsteedstudios.logicalgame;
 
 import android.app.Activity;
 import android.os.Bundle;
