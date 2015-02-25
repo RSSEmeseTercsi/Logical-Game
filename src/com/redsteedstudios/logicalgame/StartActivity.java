@@ -75,6 +75,8 @@ public class StartActivity extends Activity implements View.OnClickListener,  Go
             case R.id.player_info_container:
 
 
+                mSignInClicked=true;
+
                 mGoogleApiClient.connect();
 
 
