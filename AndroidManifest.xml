@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ScreenSettings"/>
-   <activity android:name=".LevelChooserActivity"/>
+        <activity android:name=".LevelChooserActivity"/>
         <activity android:name=".ScreenGame" android:theme="@android:style/Theme.NoTitleBar"/>
 
 

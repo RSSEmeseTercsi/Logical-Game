@@ -1,7 +1,10 @@
 package com.redsteedstudios.logicalgame;
 
 import android.app.Activity;
+import android.content.ClipData;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.DragEvent;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.*;
@@ -16,11 +19,13 @@ import java.util.List;
 /**
  * Created by Greg on 2/24/15.
  */
-public class ScreenGame extends Activity
-{
+public class ScreenGame extends Activity implements AdapterView.OnItemLongClickListener {
     private NodeSet nodeSet;
 
     private List<NodeView> nodeViews;
+    private Node actualNode;
+    private ArrayList<Node> dynamicNodes;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,7 +59,7 @@ public class ScreenGame extends Activity
         ArrayAdapter arrayAdapter;
 
         //dynamics
-        ArrayList<Node> dynamicNodes = new ArrayList<Node>();
+        dynamicNodes = new ArrayList<Node>();
         for (Node node : this.nodeSet.getNodes())
         {
             if (node.getOwner() == Node.ENodeOwner.node_owner_dynamic)
@@ -64,6 +69,7 @@ public class ScreenGame extends Activity
         }
 
         levelListView.setAdapter(new NodeViewAdapter(this.getBaseContext(), dynamicNodes));
+        levelListView.setOnItemLongClickListener(this);
     }
 
     public void bindNodeSet()
@@ -75,6 +81,7 @@ public class ScreenGame extends Activity
             nodeView.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
             nodeView.bindNode(node);
             node.attachView(nodeView);
+            nodeView.setOnDragListener(new myDragEventListener());
 
             getGameRow(node.getRow()).addView(nodeView);
             c++;
@@ -135,5 +142,36 @@ public class ScreenGame extends Activity
     public void backButtonClicked(){
         this.finish();
         onBackPressed();
+    }
+
+    @Override
+    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+        Log.e("long1","long1");
+        ClipData data = ClipData.newPlainText("", "");
+        View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
+        actualNode = dynamicNodes.get(position);
+        view.startDrag(data,shadowBuilder,view,0);
+        Log.e("long","long");
+        return true;
+    }
+
+    protected class myDragEventListener implements View.OnDragListener {
+
+        public boolean onDrag(View v, DragEvent event) {
+
+            NodeView nodeView = (NodeView) v;
+            final int action = event.getAction();
+
+            Log.e("sdfj", "dsf");
+            switch (action) {
+                case DragEvent.ACTION_DRAG_ENDED:
+                    nodeView.bindAttach(actualNode);
+                    break;
+                default:
+                    break;
+
+            }
+            return false;
+        }
     }
 }

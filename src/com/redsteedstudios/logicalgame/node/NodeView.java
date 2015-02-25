@@ -3,10 +3,12 @@ package com.redsteedstudios.logicalgame.node;
 import android.content.Context;
 import android.graphics.Color;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 /**
  * Created by Greg on 2/25/15.
@@ -40,7 +42,7 @@ public class NodeView extends LinearLayout
         //based on the attr, we need create new a view
         //todo: move the view out, and remove the previous one if there is any
 
-        Button btn = new Button(this.context);
+        TextView btn = new TextView(this.context);
         btn.setWidth(75);
         btn.setHeight(75);
         btn.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
@@ -87,10 +89,13 @@ public class NodeView extends LinearLayout
                 }
                 else
                 {
+
                     retVal = false;
                 }
             } break;
         }
+
+        Log.e("retval", " " +retVal);
         return retVal;
     }
 }
