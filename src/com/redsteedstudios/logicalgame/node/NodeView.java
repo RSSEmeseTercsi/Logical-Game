@@ -79,13 +79,16 @@ public class NodeView extends LinearLayout
             } break;
             case node_owner_dynamic:
             {
-                retVal = false;
-            } break;
-            case node_owner_empty:
-            {
-                this._attachedNode = attached;
-                recreateNodeView(true);
-                retVal = true;
+                if (this._attachedNode == null)
+                {
+                    this._attachedNode = attached;
+                    recreateNodeView(true);
+                    retVal = true;
+                }
+                else
+                {
+                    retVal = false;
+                }
             } break;
         }
         return retVal;
