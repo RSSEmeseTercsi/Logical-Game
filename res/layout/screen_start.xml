@@ -23,23 +23,29 @@
             android:background="@android:color/holo_orange_light"/>
 
 
-    <ImageView android:layout_width="@dimen/start_screen_player_imgheight_width"
-               android:layout_height="@dimen/start_screen_player_imgheight_width"
-               android:id="@+id/player_image"
-               android:background="@android:color/white"
-               android:layout_alignParentBottom="true"
-               android:layout_centerHorizontal="true"/>
+    <LinearLayout android:layout_width="wrap_content"
+                  android:weightSum="10"
+                  android:layout_alignParentBottom="true"
+                  android:layout_alignParentRight="true"
+                  android:orientation="horizontal"
+            android:layout_height="@dimen/start_screen_player_imgheight_width"
+            android:id="@+id/player_info_container">
+        <ImageView
+                android:layout_width="@dimen/start_screen_player_imgheight_width"
+                android:layout_height="@dimen/start_screen_player_imgheight_width"
+                android:id="@+id/player_image"
+                />
 
 
-    <TextView android:layout_width="wrap_content"
-              android:layout_height="@dimen/tart_screen_player_name_height"
-              android:text="@string/anonymus"
-              android:id="@+id/player_name"
-              android:gravity="center"
-              android:layout_alignRight="@+id/player_image"
-              android:layout_alignParentBottom="true"
-              android:layout_alignParentRight="true"
-              android:layout_toEndOf="@+id/player_image"/>
+        <TextView
+                android:layout_width="@dimen/start_screen_player_name_width"
+                android:layout_height="@dimen/tart_screen_player_name_height"
+                android:text="@string/anonymus"
+                android:id="@+id/player_name"
+                android:gravity="center"
+              />
+    </LinearLayout>
+
     <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -66,5 +72,7 @@
             android:id="@+id/settings_button"
             android:layout_below="@+id/continue_btn"
             android:layout_alignRight="@+id/continue_btn"/>
+
+
 
 </RelativeLayout>

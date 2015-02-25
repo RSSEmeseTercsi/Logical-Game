@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/account_chooser_title_height"
+                android:gravity="left|center"
+                android:textSize="@dimen/account_chooser_title_text_size"
+                android:text="@string/account_chooser_title"/>
+
+        <ListView
+                android:id="@+id/accounts_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></ListView>
+</LinearLayout>

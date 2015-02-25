@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Logic Game</string>
+    <!--Start screen-->
+<string name="app_name">Logic Game</string>
     <string name="anonymus">Anonymus</string>
     <string name="continue_btn">Continue</string>
     <string name="new_game">New</string>
+
+    <!--Settings-->
     <string name="settings">Settings</string>
     <string name="settings_header">Settings</string>
     <string name="settings_switch_sound">Sound</string>
@@ -11,7 +14,16 @@
     <string name="settings_btn_account">Switch account</string>
     <string name="settings_btn_share">Share</string>
     <string name="settings_btn_achievements">Achievements</string>
-    <string name="back">Back</string>
+  <string name="back">Back</string>
     <string name="share_body">Sharing from my awesome app, because why the hell not.</string>
     <string name="share_popup_title">Share via</string>
+
+    <!--Switch Account Dialog-->
+    <string name="account_chooser_title">Choose
+        Account
+    </string>
+    <string name="app_id">
+        AIzaSyDP_V8vm9iojppsF2zZIc0XNX3keBnxmC8
+    </string>
+
 </resources>

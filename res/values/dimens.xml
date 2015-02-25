@@ -18,8 +18,19 @@
     <dimen name="start_screen_button_margin">
         50dp
     </dimen>
+
+    <!--Settings-->
     <dimen name="settings_space_after_header">
         70dp
+    </dimen>
+    <dimen name="start_screen_player_name_width">
+        100dp
+    </dimen>
+    <dimen name="account_chooser_title_text_size">
+        15sp
+    </dimen>
+    <dimen name="account_chooser_title_height">
+        50dp
     </dimen>
 
     <!--Level Chooser screen-->
