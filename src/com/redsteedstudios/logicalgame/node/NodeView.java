@@ -15,7 +15,7 @@ import android.widget.TextView;
  */
 public class NodeView extends LinearLayout
 {
-    private View _view;
+    private TextView _view;
     private Node _node;
     private Node _attachedNode;
 
@@ -42,26 +42,36 @@ public class NodeView extends LinearLayout
         //based on the attr, we need create new a view
         //todo: move the view out, and remove the previous one if there is any
 
-        TextView btn = new TextView(this.context);
-        btn.setWidth(75);
-        btn.setHeight(75);
-        btn.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
-        btn.setTextSize(8);
-        btn.setTextColor(Color.RED);
-        btn.setText("" + _node.getID());
+        if (this._view != null)
+        {
+            this.removeView(this._view);
+            this._view = null;
+        }
 
-        if (!attached) {
+        this._view = new TextView(this.context);
+        this._view.setWidth(75);
+        this._view.setHeight(75);
+        this._view.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+        this._view.setTextSize(8);
+        this._view.setTextColor(Color.RED);
+        this._view.setText("" + _node.getID());
+
+        if (this._attachedNode == null) {
             if (_node.getOwner() == Node.ENodeOwner.node_owner_static)
             {
-                btn.setBackgroundColor(Color.RED);
+                this._view.setBackgroundColor(Color.RED);
             }
             else
             {
-                btn.setBackgroundColor(Color.WHITE);
+                this._view.setBackgroundColor(Color.WHITE);
             }
         }
+        else
+        {
+            this._view.setBackgroundColor(Color.GREEN);
+        }
 
-        this.addView(btn);
+        this.addView(this._view);
     }
 
     public void bindNode(Node node)

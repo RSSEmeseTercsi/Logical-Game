@@ -34,7 +34,7 @@ public class FileUtils
             {
                 if (file.contains(".json")) //assuming only our level files are json in this folder
                 {
-                    locations.add(file);
+                    locations.add(file.replace(".json", ""));
                 }
             }
 

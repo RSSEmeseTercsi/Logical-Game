@@ -169,7 +169,6 @@ public class ScreenGame extends Activity implements AdapterView.OnItemLongClickL
                     break;
                 default:
                     break;
-
             }
             return false;
         }
