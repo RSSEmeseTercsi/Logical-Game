@@ -45,6 +45,7 @@ public class NodeView extends LinearLayout
         btn.setHeight(75);
         btn.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
         btn.setTextSize(8);
+        btn.setTextColor(Color.RED);
         btn.setText("" + _node.getID());
 
         if (!attached) {
@@ -64,7 +65,6 @@ public class NodeView extends LinearLayout
     public void bindNode(Node node)
     {
         this._node = node;
-        //set the owner if static
         recreateNodeView(false);
     }
 

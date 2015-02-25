@@ -54,16 +54,12 @@ public class ScreenGame extends Activity
         ArrayAdapter arrayAdapter;
 
         //dynamics
-        ArrayList<NodeView> dynamicNodes = new ArrayList<NodeView>();
+        ArrayList<Node> dynamicNodes = new ArrayList<Node>();
         for (Node node : this.nodeSet.getNodes())
         {
             if (node.getOwner() == Node.ENodeOwner.node_owner_dynamic)
             {
-                NodeView nodeView = new NodeView(this, null);
-                nodeView.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
-                nodeView.bindNode(node);
-
-                dynamicNodes.add(nodeView);
+                dynamicNodes.add(node);
             }
         }
 

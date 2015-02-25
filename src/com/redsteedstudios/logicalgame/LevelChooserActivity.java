@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
+import com.redsteedstudios.logicalgame.util.FileUtils;
 
 import java.util.ArrayList;
 
@@ -37,10 +38,12 @@ public class LevelChooserActivity extends Activity implements AdapterView.OnItem
     public void bindLevelChooserLisView(){
         ListView levelListView = (ListView) findViewById(R.id.level_list_view);
         LevelChooserAdapter arrayAdapter;
-        ArrayList<String> list = new ArrayList<String>();
-        for (int i = 1; i <= MAX_LEVEL_NUM; i++) {
-            list.add("Level " + i);
-        }
+        //ArrayList<String> list = new ArrayList<String>();
+        //for (int i = 1; i <= MAX_LEVEL_NUM; i++) {
+        //    list.add("Level " + i);
+        //}
+        ArrayList<String> list = FileUtils.getInstance().getLevelJSONLocations(this);
+
         arrayAdapter = new LevelChooserAdapter(this, list);
         levelListView.setAdapter(arrayAdapter);
         levelListView.setOnItemClickListener(this);

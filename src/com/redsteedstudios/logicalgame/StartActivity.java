@@ -17,6 +17,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.plus.Plus;
 import com.google.android.gms.plus.model.people.Person;
 import com.redsteedstudios.logicalgame.Utils.RoundImage;
+import com.redsteedstudios.logicalgame.util.FileUtils;
 
 import java.io.InputStream;
 
@@ -42,13 +43,14 @@ public class StartActivity extends Activity implements View.OnClickListener,  Go
         super.onCreate(savedInstanceState);
         setContentView(R.layout.screen_start);
 
-
         Button settings = (Button) findViewById(R.id.settings_button);
-        Button continuebtn = (Button) findViewById(R.id.continue_btn);
+        Button continueButton = (Button) findViewById(R.id.continue_btn);
+        Button startButton = (Button) findViewById(R.id.new_game_btn);
         imgProfilePic = (ImageView) findViewById(R.id.player_image);
         playerName = (TextView) findViewById(R.id.player_name);
         settings.setOnClickListener(this);
-        continuebtn.setOnClickListener(this);
+        continueButton.setOnClickListener(this);
+        startButton.setOnClickListener(this);
 
         LinearLayout player_info_container = (LinearLayout) findViewById(R.id.player_info_container);
 
@@ -71,6 +73,9 @@ public class StartActivity extends Activity implements View.OnClickListener,  Go
                 break;
             case R.id.continue_btn:
                 startActivity(new Intent(this,ScreenGame.class));
+                break;
+            case R.id.new_game_btn:
+                startActivity(new Intent(this,LevelChooserActivity.class));
                 break;
             case R.id.player_info_container:
 

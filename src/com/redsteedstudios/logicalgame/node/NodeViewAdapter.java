@@ -12,18 +12,20 @@ import java.util.ArrayList;
 /**
  * Created by Greg on 2/25/15.
  */
-public class NodeViewAdapter extends ArrayAdapter<NodeView>
+public class NodeViewAdapter extends ArrayAdapter<Node>
 {
     LayoutInflater inflater;
-    ArrayList<NodeView> nodeView;
+    ArrayList<Node> nodes;
 
-    public NodeViewAdapter(Context context, ArrayList<NodeView> nodeViews) {
+    public NodeViewAdapter(Context context, ArrayList<Node> nodeViews) {
         super(context, 0, nodeViews);
-        this.nodeView = nodeViews;
+        this.nodes = nodeViews;
     }
 
     public View getView(final int position, View convertView,ViewGroup parent)
     {
-        return nodeView.get(position);
+        NodeView nodeView = new NodeView(getContext(), null);
+        nodeView.bindNode(this.nodes.get(position));
+        return nodeView;
     }
 }
