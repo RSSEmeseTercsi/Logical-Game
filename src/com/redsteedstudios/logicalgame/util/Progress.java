@@ -16,12 +16,13 @@ public class Progress
     {
         progress_score,
         progress_level,
+        progress_last_level_played,
         progress_best_time,
         progress_none
     }
 
     private static Progress _progress;
-    private HashMap<ESaveType, Float> _progressMap;
+    private HashMap<ESaveType, String> _progressMap;
 
     public static Progress getInstance()
     {
@@ -35,9 +36,10 @@ public class Progress
 
     public Progress()
     {
-        _progressMap = new HashMap<ESaveType, Float>();
+        _progressMap = new HashMap<ESaveType, String>();
     }
 
+    //todo: remove this crap
     private String enumToString(ESaveType type)
     {
         String retVal = "";
@@ -55,6 +57,10 @@ public class Progress
             {
                 retVal = "best_time";
             } break;
+            case progress_last_level_played:
+            {
+                retVal = "last_level_played";
+            } break;
             case progress_none: break;
             default: break;
         }
@@ -69,18 +75,21 @@ public class Progress
         return ESaveType.valueOf(finalString);
     }
 
-    public void setProgress(ESaveType type, float value)
+    public void setProgress(ESaveType type, String value)
     {
         _progressMap.put(type, value);
     }
 
-    public float getProgress(ESaveType type)
+    public String getProgress(ESaveType type)
     {
-        return _progressMap.get(type);
+        if (!_progressMap.containsKey(type)){
+            return null;
+        }
+        return String.valueOf(_progressMap.get(type));
     }
 
     //no rounding should really happen, because we save it as a rounded number already.
-    public int getProgressInt(ESaveType type){ return Math.round(_progressMap.get(type)); }
+    public int getProgressInt(ESaveType type){ return Integer.valueOf(_progressMap.get(type)); }
 
     public void removeProgress(ESaveType type)
     {
@@ -95,7 +104,7 @@ public class Progress
         _progressMap.clear();
         for (Map.Entry<String,?> entry : sharedPreferencesMap.entrySet())
         {
-            _progressMap.put(stringToEnum(entry.getKey()), ((Float)entry.getValue()).floatValue());
+            _progressMap.put(stringToEnum(entry.getKey()), String.valueOf(entry.getValue()));
         }
     }
 
@@ -105,10 +114,10 @@ public class Progress
         SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
 
         sharedPreferencesEditor.clear();
-        for(HashMap.Entry<ESaveType, Float> entry : _progressMap.entrySet()) {
+        for(HashMap.Entry<ESaveType, String> entry : _progressMap.entrySet()) {
             if (entry != null)
             {
-                sharedPreferencesEditor.putFloat(enumToString(entry.getKey()), entry.getValue());
+                sharedPreferencesEditor.putString(enumToString(entry.getKey()), String.valueOf(entry.getValue()));
             }
         }
 

@@ -60,9 +60,10 @@ public class ScreenGameSurface extends View
 
         if (this.mConnectedLineData != null && !this.mConnectedLineData.isEmpty())
         {
-            for (LineData line :this.mConnectedLineData)
+            for (LineData line : this.mConnectedLineData)
             {
                 canvas.drawLine(line.x1, line.y1, line.x2, line.y2, this.mPaint);
+                canvas.drawCircle(line.x2, line.y2, 15.0f, this.mPaint);
 
                 if (DEBUG)
                 {

@@ -12,6 +12,7 @@ import com.redsteedstudios.logicalgame.node.Node;
 import com.redsteedstudios.logicalgame.node.NodeSet;
 import com.redsteedstudios.logicalgame.node.NodeView;
 import com.redsteedstudios.logicalgame.node.NodeViewAdapter;
+import com.redsteedstudios.logicalgame.util.Progress;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +44,16 @@ public class ScreenGame extends Activity implements AdapterView.OnItemLongClickL
         this.nodeViews = new ArrayList<NodeView>();
 
         this.nodeSet = new NodeSet();
-        this.nodeSet.loadLevel(this, (level == null ? "level_1.json" : level)); //load the level here
+        if (level == null)
+        {
+            this.nodeSet.loadLevel(this, "level_1.json");
+            Progress.getInstance().setProgress(Progress.ESaveType.progress_last_level_played, "level_1.json");
+        }
+        else
+        {
+            this.nodeSet.loadLevel(this, level);
+            Progress.getInstance().setProgress(Progress.ESaveType.progress_last_level_played, level);
+        }
 
         Button backButton = (Button) findViewById(R.id.back_button);
         backButton.setOnClickListener(new View.OnClickListener() {

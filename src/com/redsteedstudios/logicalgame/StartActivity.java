@@ -18,6 +18,7 @@ import com.google.android.gms.plus.Plus;
 import com.google.android.gms.plus.model.people.Person;
 import com.redsteedstudios.logicalgame.Utils.RoundImage;
 import com.redsteedstudios.logicalgame.util.FileUtils;
+import com.redsteedstudios.logicalgame.util.Progress;
 
 import java.io.InputStream;
 
@@ -72,7 +73,9 @@ public class StartActivity extends Activity implements View.OnClickListener,  Go
                startActivity(new Intent(this,ScreenSettings.class));
                 break;
             case R.id.continue_btn:
-                startActivity(new Intent(this,ScreenGame.class));
+                Intent intent = new Intent(this,ScreenGame.class);
+                intent.putExtra("selected_level", Progress.getInstance().getProgress(Progress.ESaveType.progress_last_level_played));
+                startActivity(intent);
                 break;
             case R.id.new_game_btn:
                 startActivity(new Intent(this,LevelChooserActivity.class));
