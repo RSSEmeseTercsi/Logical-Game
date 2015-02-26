@@ -19,7 +19,6 @@ public class NodeView extends LinearLayout
     private TextView _view;
     private Node _node;
     private Node _attachedNode;
-    public String _testString = "node";
 
     private Context context;
 
@@ -111,7 +110,8 @@ public class NodeView extends LinearLayout
             } break;
         }
 
-        Log.e("retval", " " +retVal);
         return retVal;
     }
+
+
 }
