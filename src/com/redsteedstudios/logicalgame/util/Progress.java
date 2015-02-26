@@ -79,6 +79,9 @@ public class Progress
         return _progressMap.get(type);
     }
 
+    //no rounding should really happen, because we save it as a round number already.
+    public int getProgressInt(ESaveType type){ return Math.round(_progressMap.get(type)); }
+
     public void removeProgress(ESaveType type)
     {
         _progressMap.remove(type);

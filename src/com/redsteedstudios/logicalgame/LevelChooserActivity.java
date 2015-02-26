@@ -1,6 +1,7 @@
 package com.redsteedstudios.logicalgame;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -47,8 +48,10 @@ public class LevelChooserActivity extends Activity implements AdapterView.OnItem
         arrayAdapter = new LevelChooserAdapter(this, list);
         levelListView.setAdapter(arrayAdapter);
         levelListView.setOnItemClickListener(this);
-    }
 
+        TextView levelCountText = (TextView)findViewById(R.id.unblocked_and_sum_levelnums);
+        levelCountText.setText("1/" + list.size());
+    }
 
     public void backButtonClicked(){
         this.finish();
@@ -57,12 +60,17 @@ public class LevelChooserActivity extends Activity implements AdapterView.OnItem
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        if(position == 0){
-            //available level
-            Log.e("pos",""+position);
-        }else{
-            //blocked levels
-            Log.e("pos2",""+position);
-        }
+       // if(position == 0){
+            TextView clickedItemTextView = (TextView)view.findViewById(R.id.level_num);
+            String finalJSON = clickedItemTextView.getText() + ".json";
+
+            Intent gameIntent = new Intent(this, ScreenGame.class);
+            gameIntent.putExtra("selected_level", finalJSON);
+            startActivity(gameIntent);
+
+       // }else{
+       //     //blocked levels
+       //     Log.e("pos2",""+position);
+       // }
     }
 }

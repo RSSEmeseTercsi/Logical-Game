@@ -32,10 +32,17 @@ public class ScreenGame extends Activity implements AdapterView.OnItemLongClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.screen_game);
 
+        Bundle extras = this.getIntent().getExtras();
+        String level = null;
+        if (extras != null)
+        {
+            level = extras.getString("selected_level");
+        }
+
         this.nodeViews = new ArrayList<NodeView>();
 
         this.nodeSet = new NodeSet();
-        this.nodeSet.loadLevel(this, "level_1.json"); //load the level here
+        this.nodeSet.loadLevel(this, (level == null ? "level_1.json" : level)); //load the level here
 
         Button backButton = (Button) findViewById(R.id.back_button);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -149,7 +156,7 @@ public class ScreenGame extends Activity implements AdapterView.OnItemLongClickL
         ClipData data = ClipData.newPlainText("", "");
         View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
         actualNode = dynamicNodes.get(position);
-        view.startDrag(data,shadowBuilder,view,0);
+        view.startDrag(data, shadowBuilder, view, 0);
         return true;
     }
 

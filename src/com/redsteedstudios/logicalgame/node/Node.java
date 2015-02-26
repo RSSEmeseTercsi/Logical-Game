@@ -19,6 +19,7 @@ public class Node
     {
         node_owner_static,
         node_owner_dynamic,
+        node_owner_list,
         node_owner_none
     }
 
