@@ -2,7 +2,7 @@
 <resources>
     <!--Start screen-->
 <string name="app_name">Logic Game</string>
-    <string name="anonymus">Anonymus</string>
+    <string name="login">Login</string>
     <string name="continue_btn">Continue</string>
     <string name="new_game">New</string>
 

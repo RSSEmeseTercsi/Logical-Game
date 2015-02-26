@@ -40,7 +40,7 @@
         <TextView
                 android:layout_width="@dimen/start_screen_player_name_width"
                 android:layout_height="@dimen/tart_screen_player_name_height"
-                android:text="@string/anonymus"
+                android:text="@string/login"
                 android:id="@+id/player_name"
                 android:gravity="center"
               />
