@@ -32,7 +32,7 @@ public class FileUtils
             String[] list = context.getAssets().list("");
             for (String file : list)
             {
-                if (file.contains(".json")) //assuming only our level files are json in this folder
+                if (file.contains(".json"))
                 {
                     locations.add(file.replace(".json", ""));
                 }

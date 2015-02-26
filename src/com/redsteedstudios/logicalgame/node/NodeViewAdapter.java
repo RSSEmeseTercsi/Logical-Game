@@ -33,4 +33,9 @@ public class NodeViewAdapter extends ArrayAdapter<Node>
         nodeView.setLayoutParams(new AbsListView.LayoutParams(AbsListView.LayoutParams.MATCH_PARENT, AbsListView.LayoutParams.MATCH_PARENT));
         return nodeView;
     }
+
+    public int getPositionOf(Node node)
+    {
+        return this.nodes.indexOf(node);
+    }
 }

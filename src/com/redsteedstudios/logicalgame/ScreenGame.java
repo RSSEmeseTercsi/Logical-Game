@@ -189,7 +189,7 @@ public class ScreenGame extends Activity implements AdapterView.OnItemLongClickL
                     return true;
                 case DragEvent.ACTION_DROP:
 
-                    nodeViews.remove(nodeView.getNode().getID());
+                    nodeViews.remove(nodeViewAdapter.getPositionOf(actualNode));
 
                     if (nodeView.bindAttach(actualNode)) {
                         countOfDynamicNodes--;
