@@ -18,9 +18,7 @@ import java.util.ArrayList;
  */
 public class NodeViewAdapter extends ArrayAdapter<Node>
 {
-    LayoutInflater inflater;
     ArrayList<Node> nodes;
-    Activity context;
 
     public NodeViewAdapter(Context context, ArrayList<Node> nodeViews) {
         super(context, 0, nodeViews);

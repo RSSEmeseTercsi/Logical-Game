@@ -26,6 +26,7 @@ public class ScreenGame extends Activity implements AdapterView.OnItemLongClickL
     private Node actualNode;
     private ArrayList<Node> dynamicNodes;
     private int countOfDynamicNodes;
+    private NodeViewAdapter nodeViewAdapter;
 
 
     @Override
@@ -62,7 +63,6 @@ public class ScreenGame extends Activity implements AdapterView.OnItemLongClickL
         //todo select the dynamic nodes, and add them to this list
 
         ListView levelListView = (ListView) findViewById(R.id.game_node_selection_view);
-        ArrayAdapter arrayAdapter;
 
         //dynamics
         dynamicNodes = new ArrayList<Node>();
@@ -72,7 +72,8 @@ public class ScreenGame extends Activity implements AdapterView.OnItemLongClickL
             }
         }
 
-        levelListView.setAdapter(new NodeViewAdapter(this.getBaseContext(), dynamicNodes));
+        nodeViewAdapter = new NodeViewAdapter(this.getBaseContext(), dynamicNodes);
+        levelListView.setAdapter(nodeViewAdapter);
         levelListView.setOnItemLongClickListener(this);
     }
 
@@ -83,7 +84,7 @@ public class ScreenGame extends Activity implements AdapterView.OnItemLongClickL
             nodeView.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
             nodeView.bindNode(node);
             nodeView.setOnDragListener(new myDragEventListener());
-            nodeView.setOnClickListener(new nodeClickListener());
+//            nodeView.setOnClickListener(new nodeClickListener());
             node.attachView(nodeView);
             nodeViews.add(nodeView);
 
@@ -150,15 +151,15 @@ public class ScreenGame extends Activity implements AdapterView.OnItemLongClickL
         onBackPressed();
     }
 
-    protected class nodeClickListener implements View.OnClickListener
-    {
-        @Override
-        public void onClick(View v)
-        {
-            NodeView nodeView = (NodeView)v;
-            nodeView.removeAttachment();
-        }
-    }
+//    protected class nodeClickListener implements View.OnClickListener
+//    {
+//        @Override
+//        public void onClick(View v)
+//        {
+//            NodeView nodeView = (NodeView)v;
+//            nodeView.removeAttachment();
+//        }
+//    }
 
     @Override
     public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
@@ -189,12 +190,12 @@ public class ScreenGame extends Activity implements AdapterView.OnItemLongClickL
                 case DragEvent.ACTION_DROP:
 
                     nodeViews.remove(nodeView.getNode().getID());
-                    nodeView.bindAttach(actualNode);
 
                     if (nodeView.bindAttach(actualNode)) {
                         countOfDynamicNodes--;
+                        nodeViewAdapter.remove(actualNode);
+                        nodeViewAdapter.notifyDataSetChanged();
                     }
-                    nodeViews.add(nodeView.getNode().getID(), nodeView);
 
                     if (countOfDynamicNodes == 0) {
                         if (validate(nodeViews)) {
