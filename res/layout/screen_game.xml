@@ -27,7 +27,7 @@
                 <LinearLayout android:layout_width="match_parent" android:layout_height="75dp" android:orientation="horizontal" android:id="@+id/game_row7" android:gravity="center"></LinearLayout>
             </TableLayout>
             <ListView
-                    android:layout_width="75dp"
+                    android:layout_width="40dp"
                     android:layout_height="match_parent"
                     android:id="@+id/game_node_selection_view"
                     android:divider="@android:color/transparent"

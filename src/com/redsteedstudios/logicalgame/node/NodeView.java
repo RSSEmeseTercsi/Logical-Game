@@ -99,7 +99,6 @@ public class NodeView extends LinearLayout
                 }
                 else
                 {
-
                     retVal = false;
                 }
             } break;

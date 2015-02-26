@@ -146,27 +146,38 @@ public class ScreenGame extends Activity implements AdapterView.OnItemLongClickL
 
     @Override
     public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-        Log.e("long1","long1");
         ClipData data = ClipData.newPlainText("", "");
         View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
         actualNode = dynamicNodes.get(position);
         view.startDrag(data,shadowBuilder,view,0);
-        Log.e("long","long");
         return true;
     }
 
     protected class myDragEventListener implements View.OnDragListener {
 
+        public myDragEventListener(){
+            super();
+
+        }
         public boolean onDrag(View v, DragEvent event) {
 
             NodeView nodeView = (NodeView) v;
             final int action = event.getAction();
 
-            Log.e("sdfj", "dsf");
             switch (action) {
-                case DragEvent.ACTION_DRAG_ENDED:
+                case DragEvent.ACTION_DRAG_STARTED:
+                    return true;
+                case DragEvent.ACTION_DRAG_LOCATION:
+                    return true;
+                case DragEvent.ACTION_DROP:
                     nodeView.bindAttach(actualNode);
-                    break;
+                    return true;
+                case DragEvent.ACTION_DRAG_ENTERED:
+                    return true;
+                case DragEvent.ACTION_DRAG_EXITED:
+                    return true;
+                case DragEvent.ACTION_DRAG_ENDED:
+                    return true;
                 default:
                     break;
             }
