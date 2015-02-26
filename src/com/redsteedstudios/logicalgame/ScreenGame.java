@@ -190,9 +190,12 @@ public class ScreenGame extends Activity implements AdapterView.OnItemLongClickL
 
                     nodeViews.remove(nodeView.getNode().getID());
                     nodeView.bindAttach(actualNode);
+
+                    if (nodeView.bindAttach(actualNode)) {
+                        countOfDynamicNodes--;
+                    }
                     nodeViews.add(nodeView.getNode().getID(), nodeView);
 
-                    countOfDynamicNodes--;
                     if (countOfDynamicNodes == 0) {
                         if (validate(nodeViews)) {
                             Toast.makeText(ScreenGame.this, "WIN", Toast.LENGTH_SHORT).show();

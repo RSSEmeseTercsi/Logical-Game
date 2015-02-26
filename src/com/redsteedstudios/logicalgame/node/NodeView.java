@@ -39,10 +39,9 @@ public class NodeView extends LinearLayout
         return this._attachedNode;
     }
 
-    public void recreateNodeView(boolean attached)
+    public void recreateNodeView()
     {
-        //based on the attr, we need create new a view
-        //todo: move the view out, and remove the previous one if there is any
+        this.setPadding(20, 0, 20, 0);
 
         if (this._view != null)
         {
@@ -57,21 +56,15 @@ public class NodeView extends LinearLayout
         this._view.setTextSize(8);
         this._view.setTextColor(Color.BLACK);
 
-        if (this._attachedNode == null) {
-            if (_node.getOwner() == Node.ENodeOwner.node_owner_static)
-            {
-                this._view.setBackgroundResource(R.drawable.node_static_shape);
-                this._view.setText("" + _node.getID());
-            }
-            else
-            {
-                this._view.setBackgroundResource(R.drawable.node_empty_shape);
-            }
+        if (_attachedNode != null)
+        {
+            this._view.setBackgroundResource(_attachedNode.getNodeShapeID(true));
+            this._view.setText(_attachedNode.getNodeDisplayValue(true));
         }
         else
         {
-            this._view.setBackgroundResource(R.drawable.node_placed_shape);
-            this._view.setText("" + _node.getID());
+            this._view.setBackgroundResource(_node.getNodeShapeID(false));
+            this._view.setText(_node.getNodeDisplayValue(false));
         }
 
         this.addView(this._view);
@@ -85,7 +78,7 @@ public class NodeView extends LinearLayout
     public void bindNode(Node node)
     {
         this._node = node;
-        recreateNodeView(false);
+        recreateNodeView();
     }
 
     public boolean bindAttach(Node attached)
@@ -102,7 +95,7 @@ public class NodeView extends LinearLayout
                 if (this._attachedNode == null)
                 {
                     this._attachedNode = attached;
-                    recreateNodeView(true);
+                    recreateNodeView();
                     retVal = true;
                 }
                 else
@@ -123,7 +116,7 @@ public class NodeView extends LinearLayout
                 if (this._attachedNode != null)
                 {
                     this._attachedNode = null;
-                    recreateNodeView(false);
+                    recreateNodeView();
                 }
             } break;
             default: break;

@@ -1,0 +1,65 @@
+{
+  "nodes": [
+    {
+      "layer" : 1,
+      "shape" : "node_shape_square",
+      "owner" : "node_owner_dynamic",
+      "type"  : "node_type_addition",
+      "value" : "-50"
+    },
+    {
+      "layer" : 2,
+      "shape" : "node_shape_square",
+      "owner" : "node_owner_static",
+      "type"  : "node_type_addition",
+      "value" : "100"
+    },
+    {
+      "layer" : 2,
+      "shape" : "node_shape_square",
+      "owner" : "node_owner_dynamic",
+      "type"  : "node_type_addition",
+      "value" : "*2"
+    },
+    {
+      "layer" : 4,
+      "shape" : "node_shape_square",
+      "owner" : "node_owner_static",
+      "type"  : "node_type_endpoint",
+      "value" : "250"
+    },
+    {
+      "layer" : 5,
+      "shape" : "node_shape_square",
+      "owner" : "node_owner_dynamic",
+      "type"  : "node_type_addition",
+      "value" : "150"
+    }
+  ],
+  "relations": [
+    {
+      "from" : 0,
+      "to" : [ 1 ]
+    },
+    {
+      "from" : 1,
+      "to" : [ 2 ]
+    },
+    {
+      "from" : 2,
+      "to" : [ 3 ]
+    },
+    {
+      "from" : 3,
+      "to" : [ -1 ]
+    },
+    {
+      "from" : 4,
+      "to" : [ 3 ]
+    }
+
+  ],
+  "level_completed": false,
+  "level_time": 123,
+  "level_name": "Level 1"
+}

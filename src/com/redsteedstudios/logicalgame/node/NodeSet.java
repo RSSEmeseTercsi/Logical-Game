@@ -64,7 +64,7 @@ public class NodeSet
                 node.setShape(Node.ENodeShape.valueOf(jsonNode.getString("shape")));
                 node.setOwner(Node.ENodeOwner.valueOf(jsonNode.getString("owner")));
                 node.setType(Node.ENodeType.valueOf(jsonNode.getString("type")));
-                //FIXME: implement getting and setting the value
+                node.setValue(jsonNode.getString("value"));
 
                 this.mNodes.add(node);
             }
