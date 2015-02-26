@@ -2,6 +2,7 @@ package com.redsteedstudios.logicalgame;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +23,7 @@ public class ScreenSettings extends Activity
     private Switch mToggleSound;
     private Switch mToggleMusic;
     private Button mBackButton;
+    private Button mShareButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class ScreenSettings extends Activity
         this.mToggleSound = (Switch)findViewById(R.id.switch_sound_settings);
         this.mToggleMusic = (Switch)findViewById(R.id.switch_music_settings);
         this.mBackButton  = (Button)findViewById(R.id.btn_settings_back);
+        this.mShareButton = (Button)findViewById(R.id.btn_share_settings);
 
         this.setSwitchDefaultValues();
 
@@ -65,6 +68,18 @@ public class ScreenSettings extends Activity
                 }
             });
         }
+
+        if (this.mShareButton != null)
+        {
+            this.mShareButton.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+                    onShareButtonPressed();
+                }
+            });
+        }
     }
 
     public void setSwitchDefaultValues()
@@ -94,6 +109,14 @@ public class ScreenSettings extends Activity
         }
         sharedPreferencesEditor.putBoolean(sound ? SETTINGS_SOUND_PREF : SETTINGS_MUSIC_PREF, checked);
         sharedPreferencesEditor.commit();
+    }
+
+    public void onShareButtonPressed()
+    {
+        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+        sharingIntent.setType("text/plain");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, getString(R.string.share_body));
+        startActivity(Intent.createChooser(sharingIntent, getString(R.string.share_popup_title)));
     }
 
     public void onBackButtonPressed()
