@@ -83,6 +83,7 @@ public class ScreenGame extends Activity implements AdapterView.OnItemLongClickL
             nodeView.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
             nodeView.bindNode(node);
             nodeView.setOnDragListener(new myDragEventListener());
+            nodeView.setOnClickListener(new nodeClickListener());
             node.attachView(nodeView);
             nodeViews.add(nodeView);
 
@@ -147,6 +148,16 @@ public class ScreenGame extends Activity implements AdapterView.OnItemLongClickL
     public void backButtonClicked() {
         this.finish();
         onBackPressed();
+    }
+
+    protected class nodeClickListener implements View.OnClickListener
+    {
+        @Override
+        public void onClick(View v)
+        {
+            NodeView nodeView = (NodeView)v;
+            nodeView.removeAttachment();
+        }
     }
 
     @Override

@@ -31,21 +31,21 @@
     {
       "layer" : 5,
       "shape" : "node_shape_square",
-      "owner" : "node_owner_static",
+      "owner" : "node_owner_dynamic",
       "type"  : "node_type_addition",
       "value" : "43"
     },
     {
       "layer" : 3,
       "shape" : "node_shape_square",
-      "owner" : "node_owner_static",
+      "owner" : "node_owner_dynamic",
       "type"  : "node_type_addition",
       "value" : "43"
     },
     {
       "layer" : 0,
       "shape" : "node_shape_square",
-      "owner" : "node_owner_static",
+      "owner" : "node_owner_dynamic",
       "type"  : "node_type_addition",
       "value" : "43"
     }
@@ -57,7 +57,7 @@
     },
     {
       "from" : 1,
-      "to" : [ 3 ]
+      "to" : [ 2 ]
     },
     {
       "from" : 2,

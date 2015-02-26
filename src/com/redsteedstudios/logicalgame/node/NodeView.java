@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import com.redsteedstudios.logicalgame.R;
 import org.w3c.dom.Text;
 
 /**
@@ -54,22 +55,23 @@ public class NodeView extends LinearLayout
         this._view.setHeight(75);
         this._view.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
         this._view.setTextSize(8);
-        this._view.setTextColor(Color.RED);
-        this._view.setText("" + _node.getID());
+        this._view.setTextColor(Color.BLACK);
 
         if (this._attachedNode == null) {
             if (_node.getOwner() == Node.ENodeOwner.node_owner_static)
             {
-                this._view.setBackgroundColor(Color.RED);
+                this._view.setBackgroundResource(R.drawable.node_static_shape);
+                this._view.setText("" + _node.getID());
             }
             else
             {
-                this._view.setBackgroundColor(Color.WHITE);
+                this._view.setBackgroundResource(R.drawable.node_empty_shape);
             }
         }
         else
         {
-            this._view.setBackgroundColor(Color.GREEN);
+            this._view.setBackgroundResource(R.drawable.node_placed_shape);
+            this._view.setText("" + _node.getID());
         }
 
         this.addView(this._view);
@@ -113,5 +115,18 @@ public class NodeView extends LinearLayout
         return retVal;
     }
 
-
+    public void removeAttachment()
+    {
+        switch(this._node.getOwner())
+        {
+            case node_owner_dynamic: {
+                if (this._attachedNode != null)
+                {
+                    this._attachedNode = null;
+                    recreateNodeView(false);
+                }
+            } break;
+            default: break;
+        }
+    }
 }
